@@ -1,0 +1,31 @@
+/* .icon-arrow:before {
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .slick-next::before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: '\f054';
+  } */
+
+  
+
+  .bord {
+    border: 1px solid white;
+    margin: 5px;
+    padding: 5px;
+    height: 100%;
+    box-sizing: border-box;
+    text-align: left
+  }
+  
+
+  .brd {
+    border: 4px double black; /* Параметры границы */
+    background: #fc3; /* Цвет фона */
+    padding: 10px; /* Поля вокруг текста */
+   }
