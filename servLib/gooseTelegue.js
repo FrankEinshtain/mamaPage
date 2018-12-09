@@ -57,16 +57,7 @@ const board = JSON.stringify({
   ]
 })
 
-// const setVisible = (messageId) => {
-//   // console.log('FUCKING JESUS!!!', messageId)
-//   Review.findOneAndUpdate({ msgId: messageId }, { $set: { visible: true } }, { new: true }, (err, doc) => {
-//     if(err) { console.log(err) }
-//     console.log('PIDAROKKKK!!!!!', doc)
-//   })
-// }
-
 const setVisible = (messageId) => {
-  // console.log('FUCKING JESUS!!!', messageId)
   Review.updateOne({ msgId: messageId }, { $set: { visible: true } }, { new: true })
     .then((resp) => {
       return console.log('UPDATE VISIBILITY', resp)
@@ -75,7 +66,6 @@ const setVisible = (messageId) => {
 }
 
 function setArchieved (messageId) {
-  // console.log('SET_ARCHIEVED')
   Review.updateOne({ msgId: messageId }, { $set: { archieved: true } }, { new: true })
     .then((resp) => {
       return console.log('UPDATE ARCHIEVE', resp)
@@ -112,7 +102,6 @@ const getReviewList = () => {
 
 const getTelega = (data) => {
   const { author, text } = data
-  // console.log('helllllooooooo!!!!', data)
   const message = `<b>имя:</b> <i>${author}</i>\n<b>отзыв:</b> ${text}`
   return new Promise((resolve, reject) => {
     bot.sendMessage(chatId, message, { parse_mode: 'HTML', reply_markup: board })
@@ -127,16 +116,13 @@ const getTelega = (data) => {
 
 const postReview = (req, res) => {
   const { author, text } = req.body
-  // console.log('POSTING REVIEW\n', req.body)
   getTelega({ author, text })
     .then((resp) => {
-      // console.log('POSSTT', resp)
       let review = new Review({
         author: author,
         text: text,
         msgId: resp
       })
-      // console.log(review)
       review.save()
         .then((resp) => {
           return res.status(200).send(resp)

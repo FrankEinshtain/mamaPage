@@ -26,7 +26,7 @@ class Footer extends Component {
       </section>
 
     )
-  }
+  } 
 }
 
 export default Footer

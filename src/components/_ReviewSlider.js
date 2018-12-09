@@ -1,14 +1,19 @@
 import React, { Component } from 'react'
 import Slider from 'react-slick'
+import { GetRandomIcon, GetNextArrow, GetPrevArrow } from '../lib/getRandom'
 
 export default class ReviewSlider extends Component {
   render () {
     const settings = {
-      dots: true,
+      autoplay: true,
+      autoplaySpeed: 2000,
       infinite: true,
-      speed: 500,
+      speed: 2000,
       slidesToShow: 3,
-      slidesToScroll: 3
+      slidesToScroll: 3,
+      arrows: true,
+      nextArrow: <GetNextArrow />,
+      prevArrow: <GetPrevArrow />
     }
     return (
       <div>

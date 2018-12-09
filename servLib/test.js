@@ -12,7 +12,7 @@ function funcPromise (data) {
   return new Promise((resolve, reject) => {
     funcCb(data, result => {
       if (result.success) return resolve('ura~')
-      return reject('gavhooooo')
+      return reject('faaaiiiilll')
     })
   })
 }

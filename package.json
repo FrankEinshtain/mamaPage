@@ -17,8 +17,10 @@
     "mongoose": "^5.3.4",
     "node-telegram-bot-api": "^0.30.0",
     "npm": "^6.4.1",
+    "path": "^0.12.7",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
+    "react-modal": "^3.6.1",
     "react-scripts": "1.1.5",
     "react-slick": "^0.23.1",
     "slick-carousel": "^1.8.1"
@@ -31,11 +33,9 @@
     "standard": "standard && node server.js"
   },
   "devDependencies": {
-    "eslint": "^5.8.0",
-    "eslint-config-airbnb": "^17.1.0",
-    "eslint-plugin-import": "^2.14.0",
-    "eslint-plugin-jsx-a11y": "^6.1.2",
-    "eslint-plugin-react": "^7.11.1",
     "standard": "^12.0.1"
+  },
+  "standard": {
+    "parser": "babel-eslint"
   }
 }

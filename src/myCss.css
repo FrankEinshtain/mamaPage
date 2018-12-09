@@ -1,31 +1,52 @@
-/* .icon-arrow:before {
-    display: inline-block;
-    font-style: normal;
-    font-variant: normal;
-    text-rendering: auto;
-    -webkit-font-smoothing: antialiased;
-  }
-
-  .slick-next::before {
+  .slick-next {
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
     content: '\f054';
-  } */
+  } 
 
-  
+  .slick-prev {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: '\f060';
+  }
 
   .bord {
-    border: 1px solid white;
+    border: 2px solid white;
+    border-radius: 5px;
     margin: 5px;
     padding: 5px;
-    height: 100%;
-    box-sizing: border-box;
-    text-align: left
+    width: auto;
+    height: 235px;
+    box-sizing: content-box;
+    text-align: start;
+    cursor: pointer;
+  }
+  .bord:hover {
+    border: 2px solid black;
+    
+  }
+
+  .mod {
+    position: fixed;
+    top: 20%;
+    bottom: auto;
+    left: 30%;
+    right: 30%;
+    border: 2px solid white;
+    background: url("./images/pic02.jpg") rgba(1, 1, 1, 0.6) 100% 100% no-repeat;
+    background-origin: border-box;
+    background-size: cover;
+    border-radius: 5px;
+    box-sizing: content-box;
+    box-shadow: 0 0 0 9999px rgba(0,0,0,0.5);
+    height: 335px;
+    margin: 'auto auto';
+    padding: 10px;
+    cursor: pointer;
+    z-index: 100
   }
   
+  .mod:hover {
+    border: 2px solid black;
 
-  .brd {
-    border: 4px double black; /* Параметры границы */
-    background: #fc3; /* Цвет фона */
-    padding: 10px; /* Поля вокруг текста */
-   }
+  } 

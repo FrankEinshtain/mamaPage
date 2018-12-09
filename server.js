@@ -4,19 +4,10 @@ const bodyParser = require('body-parser')
 const { postMobilo, postReview, getReviewList } = require('./servLib/gooseTelegue')
 const app = express()
 const port = 8000
-// const url = 'mongodb://localhost:27017/test';
-
-// mongoose.Promise = global.Promise;
-
-// mongoose.connect(url, { keepAlive: true }, function(err) {
-//   if (err){
-//     return console.error(err)
-//   };
-//   console.log('Successfully Connected To MongoDB');
-// });
+const path = require('path')
 
 app.use(express.static(__dirname))
-app.use(express.static(__dirname + '/build'))
+app.use(express.static(path.join('__dirname', '/build')))
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 app.use(function (req, res, next) {
@@ -30,7 +21,7 @@ app.listen(port, () => {
 })
 
 app.get('/', (req, res) => {
-  res.sendFile(__dirname + '/build/index.html')
+  res.sendFile(path.join('__dirname', '/build/index.html'))
 })
 
 app.get('/reviews', (req, res) => {
@@ -42,10 +33,6 @@ app.get('/reviews', (req, res) => {
       return console.error('ERROR getting review list!', err)
     })
 })
-
-// app.post('/addReview', (req, res) => {
-//   postReview(req)
-// });
 
 app.post('/addReview', postReview)
 
